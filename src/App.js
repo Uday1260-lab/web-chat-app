@@ -11,7 +11,7 @@ function App() {
   return (
     <ProfileProvider>
     <Switch>
-      <PublicRoute>
+      <PublicRoute path="/signin">
         <SignIn/>
       </PublicRoute>
       <PrivateRoute path="/">
