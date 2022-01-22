@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase/app';
-import { Col, Container,Button, Grid, Panel, Row, Alert } from 'rsuite';
+import { Col, Container,Button, Grid, Panel, Row, Alert, Icon } from 'rsuite';
 import { auth, database } from '../misc/firebase';
 
 const SignIn = () => {
@@ -36,10 +36,10 @@ const SignIn = () => {
                       </div>
                       <div className='mt-3'>
                           <Button block color="blue" appearance="primary" onClick={onFacebookSignIn}>
-                              <i class="fab fa-facebook-square"></i>   Continue with Facebook
+                              <Icon icon={"facebook"}/>   Continue with Facebook
                           </Button>
                           <Button block color="green" appearance="primary" onClick={onGoogleSignIn}>
-                              <i class="fab fa-google"></i>   Continue with Google
+                          <Icon icon={"google"}/>   Continue with Google
                           </Button>
                       </div>
                   </Panel>
