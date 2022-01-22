@@ -4,6 +4,7 @@ import { useModalState } from "../../misc/custom-hooks";
 import AvatarEditor from 'react-avatar-editor'
 import { database, storage } from '../../misc/firebase';
 import { useProfile } from '../../context/profile.context';
+import ProfileAvatar from '../ProfileAvatar';
 const fileInputTypes = " .png , .jpeg , .jpg ";
 const acceptedFileTypes = ['image/png' , 'image/jpeg' , 'image/pjpeg'];
 const isValidFile = (file) => acceptedFileTypes.includes(file.type);
@@ -57,8 +58,12 @@ const AvatarUploadBtn = () => {
             Alert.error(err.message,5000);
         }
     }
-  return <div className='mt-3 text-center'>
-        Avatar
+
+    console.log('profile.name', profile.name);
+
+  return( 
+        <div className='mt-3 text-center'>
+        <ProfileAvatar src={profile.avatar} name={profile.name} className="width-200 height-200 img-fullsize font-huge" />
         <div>
             <label 
                 htmlFor='avatar-upload' 
@@ -104,7 +109,8 @@ const AvatarUploadBtn = () => {
                 </Modal.Footer>
             </Modal>
         </div>
-    </div>;
+    </div>
+  );
 };
 
 export default AvatarUploadBtn;
