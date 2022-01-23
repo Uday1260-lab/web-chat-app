@@ -17,9 +17,9 @@ const Dashboard = ({ onSignOut }) => {
     try {
       await userNicknameRef.set(newData);
 
-      Alert.success('Nickname has been updated', 4000);
+      Alert.success('Nickname has been updated', 5000);
     } catch (err) {
-      Alert.error(err.message, 4000);
+      Alert.error(err.message, 5000);
     }
   };
 

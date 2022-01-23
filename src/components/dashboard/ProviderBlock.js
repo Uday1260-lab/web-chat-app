@@ -30,9 +30,9 @@ const ProviderBlock = () => {
 
       await auth.currentUser.unlink(providerId);
       updateIsConnected(providerId, false);
-      Alert.info(`Disconnected from ${providerId}`, 4000);
+      Alert.info(`Disconnected from ${providerId}`, 5000);
     } catch (err) {
-      Alert.error(err.message, 4000);
+      Alert.error(err.message, 5000);
     }
   };
 
@@ -46,7 +46,7 @@ const ProviderBlock = () => {
   const link = async provider => {
     try {
       await auth.currentUser.linkWithPopup(provider);
-      Alert.info(`Linked to ${provider.providerId}`, 4000);
+      Alert.info(`Linked to ${provider.providerId}`, 5000);
       updateIsConnected(provider.providerId, true);
     } catch (err) {
       Alert.error(err.message, 400);

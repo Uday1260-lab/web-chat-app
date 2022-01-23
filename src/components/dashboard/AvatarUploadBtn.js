@@ -42,7 +42,7 @@ const AvatarUploadBtn = () => {
 
         open();
       } else {
-        Alert.warning(`Wrong file type ${file.type}`, 4000);
+        Alert.warning(`Wrong file type ${file.type}`, 5000);
       }
     }
   };
@@ -71,10 +71,10 @@ const AvatarUploadBtn = () => {
       userAvatarRef.set(downloadUrl);
 
       setIsLoading(false);
-      Alert.info('Avatar has been uploaded', 4000);
+      Alert.info('Avatar has been uploaded', 5000);
     } catch (err) {
       setIsLoading(false);
-      Alert.error(err.message, 4000);
+      Alert.error(err.message, 5000);
     }
   };
 
