@@ -1,3 +1,4 @@
+
 {
   "rules": {
     "profiles":{
@@ -8,15 +9,18 @@
     },
       "rooms":{
         ".read": "auth !== null",
-        ".write": "auth !== null",
       "$rooms_id":{
         ".read": "auth !== null",
-        ".write": "auth !== null"
+        ".write": "!data.exists() || data.child('admins').child(auth.uid).val() == true ",
+          "lastMessage": {
+            ".write": "auth !== null"
+          }
       }
     },
       "messages":{
         ".read": "auth !== null",
         ".write": "auth !== null",
+        ".indexOn":"roomId",
       "$message_id":{
         ".read": "auth !== null",
         ".write": "auth !== null"
