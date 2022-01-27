@@ -49,7 +49,7 @@ const ProviderBlock = () => {
       Alert.info(`Linked to ${provider.providerId}`, 5000);
       updateIsConnected(provider.providerId, true);
     } catch (err) {
-      Alert.error(err.message, 400);
+      Alert.error(err.message, 5000);
     }
   };
 

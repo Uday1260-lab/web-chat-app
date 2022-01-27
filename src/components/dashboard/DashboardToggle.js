@@ -10,18 +10,17 @@ const DashboardToggle = () => {
   const isMobile = useMediaQuery('(max-width: 992px)');
 
   const onSignOut = useCallback(() => {
-
-    database.ref(`/status/${auth.currentUser.uid}`).set(isOfflineForDatabase).then( () => {
-      
-      auth.signOut();
-
-      Alert.info('Signed out', 5000);
-
-      close();
-    })
-    .catch( err => {
-      Alert.error(err.message,5000);
-    });
+    database
+      .ref(`/status/${auth.currentUser.uid}`)
+      .set(isOfflineForDatabase)
+      .then(() => {
+        auth.signOut();
+        Alert.info('Signed out', 5000);
+        close();
+      })
+      .catch(err => {
+        Alert.error(err.message, 5000);
+      });
   }, [close]);
 
   return (

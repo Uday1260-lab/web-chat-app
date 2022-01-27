@@ -12,8 +12,15 @@ const Dashboard = ({ onSignOut }) => {
 
   const onSave = async newData => {
     try {
-      const updates = await getUserUpdates(profile.uid , 'name' , newData , database);
+      const updates = await getUserUpdates(
+        profile.uid,
+        'name',
+        newData,
+        database
+      );
+
       await database.ref().update(updates);
+
       Alert.success('Nickname has been updated', 5000);
     } catch (err) {
       Alert.error(err.message, 5000);
